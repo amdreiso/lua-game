@@ -1,16 +1,13 @@
-local Fovy = require 'fovy.fovy'
+local Fovy = require("fovy.fovy")
 
 Character = {}
 
-function Character:new(name, spd)
-  local o = {
-    name = name,
-    spd = spd or 1
-  }
+function Character:new(characterTable)
+	local o = characterTable
 
-  setmetatable(o, self)
-  self.__index = self
-  return o
+	setmetatable(o, self)
+	self.__index = self
+	return o
 end
 
 return Character
